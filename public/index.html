@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Currency Landing Page</title>
+
+		<!-- update the version number as needed -->
+		<script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+		<!-- include only the Firebase features as you need -->
+		<script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+		<script defer src="/__/firebase/5.3.1/firebase-database.js"></script>
+		<script defer src="/__/firebase/5.3.1/firebase-messaging.js"></script>
+		<script defer src="/__/firebase/5.3.1/firebase-storage.js"></script>
+		<!-- initialize the SDK after all desired features are loaded -->
+		<script defer src="/__/firebase/init.js"></script>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<header>
+			<div class="gray-bg p-2 mb-3">
+				<div class="d-flex justify-content-between align-items-center container">
+					<img src="img/bitcoin.png" alt="Bitcoin icon" class="img-fluid bitcoin">
+					<h1>Criptomoedas!</h1>
+				</div>
+			</div>
+		</header>
+		<main class="container">
+			<div class="row">
+				<div class="col-12 col-md-7">
+					<div class="gama-text">
+						<h2>Lorem Ipsim</h2>
+						<p class="text-justify">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum, sapien eu ullamcorper tincidunt, diam lorem pharetra ligula, in ullamcorper mauris augue sed elit. Vivamus eleifend, libero vitae dignissim placerat, ante tellus laoreet turpis, et commodo odio magna eget eros. Sed aliquet est id sodales blandit. Vestibulum sit amet aliquam felis, non vehicula lectus. Nullam aliquet dui justo, sit amet tincidunt arcu tempor vel. Praesent ac neque nec arcu venenatis consectetur eget ut arcu. Morbi aliquam sodales nulla vitae lacinia. Phasellus a volutpat lacus
+						</p>
+					</div>
+					<div class="table-responsive">
+						<table gama-table class="table mt-3">
+							<thead>
+								<tr>
+								<th scope="col">Rank</th>
+								<th scope="col">Nome</th>
+								<th scope="col">Simbolo</th>
+								<th scope="col">R$</th>
+								<th scope="col">US$</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-12 col-md-5">
+					<div class="card">
+						<div class="card-header">
+							Link
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item"><a>Bitcoin</a></li>
+							<li class="list-group-item"><a>Etherium</a></li>
+							<li class="list-group-item"><a>Doge Coin</a></li>
+							<li class="list-group-item"><a>Cage Coin</a></li>
+						</ul>
+					</div>
+					<div class="converter mt-3">
+						<form gama-converter>
+							<h4>Conversor</h4>
+							<div class="form-group">
+								<div gama-error>
+								</div>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">R$</div>
+									</div>
+									<input type="number" class="form-control" gama-converter-value placeholder="Digite o valor...">
+									<div class="input-group-append">
+										<div class="input-group-text">,00</div>
+									</div>
+								</div>
+								<div class="input-group mt-3">
+									<select class="custom-select" gama-converter-currency>
+										<option  value="0" selected disabled>Escolha uma moeda para converter</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-block btn-primary mt-3">Converter</button>
+							</div>
+							<div class="result mt-3">
+								<h3>Resultado:</h3>
+								<p gama-result></p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+			// // The Firebase SDK is initialized and available here!
+			//
+			// firebase.auth().onAuthStateChanged(user => { });
+			// firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+			// firebase.messaging().requestPermission().then(() => { });
+			// firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+			//
+			// // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+			try {
+			let app = firebase.app();
+			let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+			document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+			} catch (e) {
+			console.error(e);
+			document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+			}
+		});
+		</script>
+		<!-- Custom Js -->
+		<script src="js/index.js"></script>
+		
+		<!-- Bootstrap -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
